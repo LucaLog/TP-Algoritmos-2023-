@@ -29,6 +29,8 @@ int main(){
 }
 
 //---------------------FUNCIÓN 1-----------------------
+/*Esta función recibe el mail del alumno que quiere ingresar al sistema. En la funcion validar usuario se verifica si el mail 
+existe y si su contraseña*/
 Alumno pedirAlumno(){
     Alumno alumnoIngresado;
     Alumno alumno;
@@ -41,6 +43,10 @@ Alumno pedirAlumno(){
 }
 
 //----------------------FUNCIÓN 2------------------------
+/*Abre los 2 archivos. Si ambos no son vacios, empieza a leerlos (primero el de alumnos). Si el mail ingresado
+esta registrado en el sistema, le muestra la cantidad de creditos que tiene y los beneficios que puede canjear con estos.
+Para esto verifica, leyendo el archivo de beneficios, que la cantidad de creditos sea menor o igual al costo de los beneficios.
+Caso contrario, devuelve que al menos un beneficio no lo puede canjear, para eso sirve el flag repetido*/
 void mostrarBeneficios(Alumno alumnoIngresado){
     FILE *registrosAlumnos = fopen("registrosAlumnos.dat", "rb+");
     FILE *archivoBeneficios = fopen("archivoBeneficios.dat", "rb");
